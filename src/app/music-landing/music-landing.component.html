@@ -1,0 +1,87 @@
+<div class="row ml-md-0" >
+
+  <div class=" col-12">
+    <h1>Music Festival</h1>
+    <p>This list below is based on music festival using a cloud api. </p>
+    <button (click)="RefreshData()" class="btn btn-primary">Reload</button>
+    <hr>
+</div>
+<div class="col-12 warning-container" *ngIf="errorStatus">
+        <h1>Message Board</h1>
+        <span >{{errorMessage}}</span><br>
+        <span>Please cllick on Reload button after sometime..</span><br>
+
+        <hr>
+    </div>
+<div class=" col-12 scroll-outer" *ngIf="!errorStatus">
+    The original Json Object ->
+    <div class="scroll-inner">
+        <pre>{{jsonobj|json}}</pre>
+    </div>
+
+</div>
+<div class=" col-12 dv-pad">
+    &nbsp;
+</div>
+<div class=" col-12 scroll-outer" *ngIf="!errorStatus">
+    The Normalized Json in tree format
+    <div class="scroll-inner">
+        <ul>
+            <li *ngFor="let recordLab of masterLabelAry">
+                {{ recordLab.recordLabelname }}
+                <ul>
+                    <li *ngFor="let bandn of recordLab.bands ">
+                        {{bandn.band}}
+                        <ul>
+                            <li>
+                                {{bandn.festival}}
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</div>
+<div class="  col-12 dv-pad">
+    &nbsp;
+</div>
+<div class=" col-12" *ngIf="!errorStatus">
+    The Output in Tabular format ->
+    <table class="table table-striped">
+        <thead class cd>
+            <tr>
+
+                <th>Record Label</th>
+                <th>Band</th>
+                <th>Festival</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let recordLab of masterLabelAry">
+                <td> {{recordLab.recordLabelname}}</td>
+                <td>
+                    <tr *ngFor="let bandn of recordLab.bands">
+                        <td>{{bandn.band}}</td>
+                    </tr>
+
+                </td>
+                <td>
+                    <tr *ngFor="let bandn of recordLab.bands">
+                        <td>{{bandn.festival}}</td>
+                    </tr>
+                </td>
+
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+<div>
+
+</div>
+
+
+</div>

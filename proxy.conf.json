@@ -1,0 +1,8 @@
+{
+	"/api/*": {
+		"target": "https://eacp.energyaustralia.com.au/codingtest/",
+		"secure": false,
+		"logLevel": "debug",
+		"changeOrigin": true
+	}
+}

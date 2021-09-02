@@ -1,0 +1,13 @@
+@import '../shared/styles/colors';
+.vcenter-item{
+  display: flex;
+  align-items: center;
+}
+
+.text-head {
+  color: color(tertiary,dncl-red);
+}
+
+.music-header {
+  background-color: color(tertiary,light-blue);
+}

@@ -1,0 +1,23 @@
+@import '../shared/styles/colors';
+
+p {
+  font-family: Lato;
+}
+.scroll-outer {
+  height: 20rem;
+  position:relative;
+
+}
+
+.scroll-inner {
+  max-height:100%;overflow:auto;border:1px solid color(tertiary,dncl-orange);
+}
+
+.dv-pad{
+  height: 4rem;
+}
+.warning-container {
+  background-color: color(tertiary,light-red);
+
+}
+
